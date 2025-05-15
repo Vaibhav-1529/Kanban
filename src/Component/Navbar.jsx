@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import AddTaskModal from './AddTaskModal';
-
 function Navbar() {
   const [isOpen,setIsOpen]=useState(false);
-  const dispatch=useDispatch();
+  const column=Object.keys(useSelector(((state)=>state.app.columns)));
+  console.log(column)//
   return (
     <>
     {
@@ -36,7 +36,11 @@ function Navbar() {
           <button
           onClick={(e)=>{
             e.stopPropagation();
+            if(column.length!=0)
             setIsOpen(true);
+          else{
+            alert("Add column")
+          }
           }}
            className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
             + Add New Task
