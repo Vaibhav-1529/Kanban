@@ -66,7 +66,7 @@ function Column({ colkey }) {
                             draggableProps={draggableProps}
                             dragHandleProps={dragHandleProps}
                           />
-                          {placeholder}
+                          {placeholder} 
                         </>
                       )}
                     </Draggable>
